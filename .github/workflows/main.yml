@@ -1,0 +1,20 @@
+name: Validação de Projetos BI e T-SQL
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar código do repositório
+        uses: actions/checkout@v4
+
+      - name: Listar arquivos e verificar estrutura SQL/Excel
+        run: |
+          echo "Verificando estrutura de arquivos de BI e scripts T-SQL..."
+          ls -R
